@@ -1,0 +1,18 @@
+<template>
+  <div>
+    <div>order</div>
+  </div>
+</template>
+<style>
+
+</style>
+<script>
+  export default{
+    data(){
+      return {
+        msg: 'hello vue'
+      }
+    },
+    components: {}
+  }
+</script>
