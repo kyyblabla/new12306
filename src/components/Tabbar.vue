@@ -1,7 +1,7 @@
 <template>
   <tabbar id="tabbar">
-    <tabbar-item :link="route.path" v-for="route in routeList">
-      <icon slot="icon" :type="route.icon"></icon>
+    <tabbar-item :link="route.path" @on-item-click="onItemClick(route)" v-for="route in routeList">
+      <img slot="icon" :src="route.icon"/>
       <span slot="label">{{route.name}}</span>
     </tabbar-item>
   </tabbar>
@@ -23,7 +23,12 @@
   export default{
     data(){
       return {
-        msg: 'hello vue'
+        activeIndex: 0
+      }
+    },
+    methods: {
+      onItemClick(index){
+        this.activeIndex = index
       }
     },
     computed: {

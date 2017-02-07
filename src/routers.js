@@ -11,19 +11,22 @@ const routes = [{
   name: 'Search',
   component: Search,
   showMenu: true,
-  icon: 'search'
+  icon: require('assets/icon/search.png'),
+  iconActive: require('assets/icon/search_active.png')
 }, {
   path: '/Order',
   name: 'Order',
   component: Order,
   showMenu: true,
-  icon: 'ticket'
+  icon: require('assets/icon/order.png'),
+  iconActive: require('assets/icon/order_active.png')
 }, {
   path: '/Person',
   name: 'Person',
   component: Person,
   showMenu: true,
-  icon: 'people'
+  icon: require('assets/icon/person.png'),
+  iconActive: require('assets/icon/person_active.png')
 }, {
   path: '*',
   redirect: '/Search'
