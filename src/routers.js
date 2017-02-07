@@ -8,19 +8,22 @@ Vue.use(VueRouter)
 
 const routes = [{
   path: '/Search',
-  name: '查票',
+  name: 'Search',
   component: Search,
-  showMenu: true
+  showMenu: true,
+  icon: 'search'
 }, {
   path: '/Order',
-  name: '订单',
+  name: 'Order',
   component: Order,
-  showMenu: true
+  showMenu: true,
+  icon: 'ticket'
 }, {
   path: '/Person',
-  name: '个人',
+  name: 'Person',
   component: Person,
-  showMenu: true
+  showMenu: true,
+  icon: 'people'
 }, {
   path: '*',
   redirect: '/Search'
