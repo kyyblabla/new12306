@@ -1,9 +1,9 @@
 <template>
   <div>
-    <x-header :left-options="{showBack:false}">
-      首页
+    <x-header :left-options="{showBack:false}" :right-options="{showMore: true}" @on-click-more="showMore">
+      {{today}}
     </x-header>
-    <div>search</div>
+    <calendar></calendar>
   </div>
 </template>
 <style>
@@ -13,14 +13,24 @@
   import {
     XHeader
   } from 'vux'
+  import moment from 'moment'
+  import Calendar from 'components/Calendar'
   export default{
     data(){
       return {
         msg: 'hello vue'
       }
     },
+    methods: {
+      showMore: () => {
+      }
+    },
+    computed: {
+      today: () => moment().format('YYYY年MM月')
+    },
     components: {
-      XHeader
+      XHeader,
+      Calendar
     }
   }
 </script>

@@ -1,8 +1,7 @@
 <template>
   <tabbar id="tabbar">
-    <tabbar-item :link="route.path" @on-item-click="menuChange(route.name)" v-for="route in routeList">
-      <img v-if="currentMenu!=route.name" slot="icon" :src="route.icon"/>
-      <img v-if="currentMenu==route.name" slot="icon" :src="route.iconActive"/>
+    <tabbar-item  :link="route.path" @on-item-click="menuChange(route.name)" v-for="(route,index) in routeList">
+      <img slot="icon" :src="currentMenu==route.name?route.iconActive:route.icon"/>
       <span slot="label">{{route.name}}</span>
     </tabbar-item>
   </tabbar>

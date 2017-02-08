@@ -15,8 +15,7 @@ const getters = {
 
 const mutations = {
   [MENU_CHANGE](state, menuName) {
-    state.menuName = menuName
-    console.log(menuName)
+    state.currentMenu = menuName
   }
 }
 
