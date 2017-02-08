@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import FastClick from 'fastclick'
 import App from './App'
+import store from './store'
 import {
   router
 } from 'src/routers'
@@ -10,6 +11,7 @@ import {
 FastClick.attach(document.body)
 /* eslint-disable no-new */
 new Vue({
+  store,
   router,
   render: h => h(App)
 }).$mount('#app')

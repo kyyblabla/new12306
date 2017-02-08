@@ -1,7 +1,8 @@
 <template>
   <tabbar id="tabbar">
-    <tabbar-item :link="route.path" @on-item-click="onItemClick(route)" v-for="route in routeList">
-      <img slot="icon" :src="route.icon"/>
+    <tabbar-item :link="route.path" @on-item-click="menuChange(route.name)" v-for="route in routeList">
+      <img v-if="currentMenu!=route.name" slot="icon" :src="route.icon"/>
+      <img v-if="currentMenu==route.name" slot="icon" :src="route.iconActive"/>
       <span slot="label">{{route.name}}</span>
     </tabbar-item>
   </tabbar>
@@ -20,6 +21,10 @@
   import {
     routes
   } from 'src/routers'
+  import {
+    mapGetters,
+    mapActions
+  } from 'vuex'
   export default{
     data(){
       return {
@@ -27,12 +32,13 @@
       }
     },
     methods: {
-      onItemClick(index){
-        this.activeIndex = index
-      }
+      ...mapActions(['menuChange'])
     },
     computed: {
-      routeList: () => routes.filter(r => r.showMenu)
+      routeList: () => routes.filter(r => r.showMenu),
+      ...mapGetters([
+        'currentMenu'
+      ])
     },
     components: {
       Icon,
