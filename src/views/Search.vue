@@ -14,7 +14,7 @@
     XHeader
   } from 'vux'
   import moment from 'moment'
-  import Calendar from 'components/Calendar'
+  import Calendar from 'components/calendar'
   export default{
     data(){
       return {

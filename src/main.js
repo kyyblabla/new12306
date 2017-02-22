@@ -4,6 +4,8 @@ import Vue from 'vue'
 import FastClick from 'fastclick'
 import App from './App'
 import store from './store'
+import VueTouch from 'vue-touch'
+Vue.use(VueTouch, {name: 'v-touch'})
 import {
   router
 } from 'src/routers'
